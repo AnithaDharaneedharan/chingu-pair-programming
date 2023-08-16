@@ -35,38 +35,7 @@ const operationClean = (s, operator_inverse, operators_list) => {
 const operationToList = s => {
   s = s.replace(/\s+/g, "");
 
-  const operators = ["+", "-", "/", "*"];
-  const numbers = [..."1234567890."];
-  Object.freeze(operators);
-  Object.freeze(numbers);
-
-  const outputList = [];
-  let i = 0;
-  let c = "";
-  while (i < s.length) {
-    c = s[i];
-    if (existsIn(c, operators)) {
-      outputList.push(c);
-      i++;
-      continue;
-    }
-
-    if (existsIn(c, numbers)) {
-      outputList.push(c);
-      for (let j = i + 1; j < s.length; j++) {
-        if (existsIn(s[j], numbers)) {
-          const lastIndex = outputList[outputList.length - 1];
-          outputList[lastIndex] += s[j];
-          i++;
-        } else break;
-      }
-      i++;
-    } else {
-      outputList.push(c);
-      i++;
-    }
-  }
-  return outputList;
+  return s.split(/([+\-*/])/).filter(v => v.trim() !== '');
 };
 
 const postfix = s => {
@@ -218,4 +187,4 @@ for (let expression of TEST_EXPRESSION) {
 }
 
 
-var calculator_eval = (expression) => postfixRead(postfix(expression));
+var calculatorEval = (expression) => postfixRead(postfix(expression));

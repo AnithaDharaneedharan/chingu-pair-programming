@@ -1,13 +1,137 @@
-.grid{
-    width: 50%;   
+:root {
+    --nice-black: #17181a;
+    --primary-color: #005db2;
+  
+    --btn-digits-color: #25313d;
+    --btn-digits-txt-color: #2a99e6;
+  
+    --warn-red: #FF5722;
+  }
+  /* css resets */
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    background-color: var(--nice-black);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  .calculator-frame {
+    background-color: var(--nice-black);
+    padding: 1.5rem;
+    height: 100vh;
+  }
+  
+  .grid-col-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-}
+  }
+  
+  .grid-col-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .grid-rows-5 {
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .grid-gap-1 {
+    gap: 1rem;
+  }
+  
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+  
+  .grid-row-span-2{
+      grid-row: span 2;
+  }
+  .btn-digits {
+    background: var(--btn-digits-color);
+    color: var(--btn-digits-txt-color);
+  }
+  
+  [class*="btn-"] {
+    border: none;
+    font-size: 2rem;
+    outline: none;
+    border-radius: .25rem;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  
+  #calculator-display-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: hsl(220 6% 15% / 1);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding: 0rem 1rem;
+    padding-top: .5rem!important;
+  }
+  
+  #calculator-display,
+  #calculator-display-history {
+    border: none;
+    outline: none;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: transparent;
+    color: white;
+    direction: ltr;
+    text-align: end;
+  }
 
-.centered {
-    /* display: flex; */
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
+  #calculator-display-history {
+    height : 7rem; /* clearance for history*/
+  }
+  
+  #calculator-display {
+      letter-spacing: .25rem;
+  }
+  
+  #calculator-display-history {
+      font-size: medium;
+      color: grey;
+      
+  }
+
+  .history-group{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .history-group span{
+    text-align: end;
+    color : grey;
+    font-size: medium;
+  }
+  
+  
+  .bg-blue{
+      background : var(--primary-color);
+      color: white;
+  }
+  
+  .bg-grey{
+      background : grey;
+      color: white;
+  }
+  
+  .bg-white{
+      background : white;
+      color: black;
+  }
+  .bg-warn{
+      background: var(--warn-red);
+      color: white;
+  }
+  .bg-nice-blue{
+      background: var(--btn-digits-txt-color);
+      color: white;
+  }
