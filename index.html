@@ -2,37 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <form class="wrapper centered">
-
-        <input id="displayer" type="text" placeholder="1 + 2">
-        <div class="grid">
-            <!-- first row -->
-            <button class="btn">1</button>
-            <button class="btn">2</button>
-            <button class="btn">3</button>
-            <!-- second row -->
-            <button class="btn">4</button>
-            <button class="btn">5</button>
-            <button class="btn">6</button>
-            <!-- third row -->
-            <button class="btn">7</button>
-            <button class="btn">8</button>
-            <button class="btn">9</button>
+    <div class="calculator-frame">
+        <div id="calculator-display-container">
+            <div id="calculator-display-history"></div>
+            <input id="calculator-display" type="text" placeholder="1+2+3*5" readonly="true" />
         </div>
-    </form>
+        <div class="wrapper centered">
+            <div class="grid-col-4 grid-rows-5 grid-gap-1">
+                <button class="btn-ac bg-warn">Ac</button>
+                <button class="btn-delete bg-grey">delete</button>
+                <button class="btn-div bg-blue">/</button>
+                <button class="btn-mul bg-blue">*</button>
 
+                <button class="btn-digits">1</button>
+                <button class="btn-digits">2</button>
+                <button class="btn-digits">3</button>
+                <button class="btn-minus bg-blue">-</button>
 
+                <button class="btn-digits">4</button>
+                <button class="btn-digits">5</button>
+                <button class="btn-digits">6</button>
+                <button class="btn-add bg-blue">+</button>
 
+                <button class="btn-digits">7</button>
+                <button class="btn-digits">8</button>
+                <button class="btn-digits">9</button>
+                <button class="grid-row-span-2 btn-equal bg-nice-blue">=</button>
+
+                <button class="btn-digits grid-col-span-2">0</button>
+                <button id="btn-dot" class="btn-dot">.</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/core.js"></script>
     <script src="js/main.js"></script>
 </body>
 
